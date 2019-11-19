@@ -15,25 +15,22 @@ public class WordCount{
 		wordCount("    ");
 	}
 	
-//This method uses loops and if/else statements to go through the string provided in the parameter and determine the amount of words and return # of words..
+	//  This method uses loops and if/else statements to go through the string provided in the parameter 
+	//  and determine the amount of words and return # of words..
     public static void wordCount(String inputString) {
-	   	int sum = 0;
-    	if (inputString.length() == 0) {
+	int sum = 0;
+    	if (inputString.length() == 0)
     		sum = 0;
-    	} else {
-		   	
-		   	if (inputString.charAt(0) != ' ') {
-				sum = sum + 1;
-			}
-			
-		    for (int letterNum = 0; letterNum <= inputString.length() - 1; letterNum++){
-		    	if (inputString.charAt(letterNum) == ' ') {
-			 		sum = sum + 0;
-			 	} 
-		    	if (inputString.charAt(letterNum) != ' ' && inputString.charAt(Math.max(letterNum - 1, 0)) == ' '){
-			 		sum++;
-			 	}
-		    } 
-    	} System.out.println(sum);
-    } 
+    	else {
+		if (inputString.charAt(0) != ' ')
+			sum = sum + 1;
+	    	for (int letterNum = 0; letterNum <= inputString.length() - 1; letterNum++){
+			if (inputString.charAt(letterNum) == ' ')
+				sum = sum + 0;
+			if (inputString.charAt(letterNum) != ' ' && inputString.charAt(Math.max(letterNum - 1, 0)) == ' ')
+				sum++;
+	    	}
+    	} 
+	System.out.println(sum);
+    }
 }
